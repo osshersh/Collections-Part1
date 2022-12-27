@@ -4,13 +4,13 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class AgeComparatorTest {
 
-    AgeComparator ageComparator;
     HeightComparator heightComparator;
     WeightComparator weightComparator;
     List<Person> peoples;
@@ -18,7 +18,6 @@ class AgeComparatorTest {
     @BeforeEach
     void init() {
         peoples = new ArrayList<>();
-        ageComparator = new AgeComparator();
         heightComparator = new HeightComparator();
         weightComparator = new WeightComparator();
 
@@ -35,7 +34,7 @@ class AgeComparatorTest {
 
     @Test
     void shouldReturnYoungestPerson() {
-        peoples.sort(ageComparator);
+        Collections.sort(peoples);
         String youngest = peoples.get(0).getName();
         assertEquals("Mark", youngest);
     }

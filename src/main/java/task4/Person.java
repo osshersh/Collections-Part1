@@ -1,6 +1,6 @@
 package task4;
 
-public class Person {
+public class Person implements Comparable<Person>{
     private String name;
     private String surname;
     private int age;
@@ -44,5 +44,10 @@ public class Person {
                 ", height=" + height +
                 ", weight=" + weight +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Person o) {
+        return Integer.compare(this.age, o.age);
     }
 }
